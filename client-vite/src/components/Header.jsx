@@ -27,8 +27,8 @@ export default function Header({ onToggleSidebar }) {
                         <p className="text-sm font-semibold text-gray-800">Asif Riaj</p>
                         <p className="text-xs text-gray-500">Hr Manager</p>
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 border border-green-200">
-                        <img src="/placeholder-avatar.png" alt="Profile" className="w-full h-full rounded-full object-cover" onError={(e) => (e.currentTarget.src = 'https://ui-avatars.com/api/?name=Asif+Riaj')} />
+                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 border border-green-200 overflow-hidden">
+                        <img src="https://ui-avatars.com/api/?name=Asif+Riaj&background=dcfce7&color=15803d" alt="Profile" className="w-full h-full object-cover" />
                     </div>
                 </div>
             </div>

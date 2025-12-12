@@ -90,7 +90,7 @@ export default function CreateNoticeForm() {
                 />
             </form>
 
-            {showSuccess && <SuccessModal title={formData.title} date={formData.publishDate} onClose={resetForm} />}
+            {showSuccess && formData && <SuccessModal title={formData.title} date={formData.publishDate} onClose={resetForm} />}
         </div>
     );
 }
