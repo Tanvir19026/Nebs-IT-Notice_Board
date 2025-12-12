@@ -7,17 +7,7 @@ export default function useCreateNoticeForm() {
     const [showSuccess, setShowSuccess] = useState(false);
     const [attachment, setAttachment] = useState(null);
     const fileInputRef = useRef(null);
-    const [errors, setErrors] = useState({});
-
-    const [formData, setFormData] = useState({
-        title: '',
-        noticeType: '',
-        employeeId: '',
-        employeeName: '',
-        employeePosition: '',
-        publishDate: '',
-        body: '',
-    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -37,6 +27,7 @@ export default function useCreateNoticeForm() {
     };
 
     const resetForm = () => {
+        setIsSubmitting(false);
         setShowSuccess(false);
         setFormData({
             title: '',
@@ -104,6 +95,7 @@ export default function useCreateNoticeForm() {
     const submitForm = async (status = 'Published') => {
         if (!validateForm()) return;
 
+        setIsSubmitting(true);
         try {
             await api.post('/notices', {
                 title: formData.title,
@@ -126,6 +118,8 @@ export default function useCreateNoticeForm() {
         } catch (err) {
             console.error(err);
             alert("Failed to create notice");
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -143,6 +137,7 @@ export default function useCreateNoticeForm() {
         resetForm,
         errors,
         attachment,
-        fileInputRef
+        fileInputRef,
+        isSubmitting
     };
 }

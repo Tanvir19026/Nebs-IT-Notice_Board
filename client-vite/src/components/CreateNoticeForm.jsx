@@ -22,7 +22,8 @@ export default function CreateNoticeForm() {
         resetForm,
         errors,
         attachment,
-        fileInputRef
+        fileInputRef,
+        isSubmitting
     } = useCreateNoticeForm();
 
     const departmentOptions = [
@@ -85,6 +86,7 @@ export default function CreateNoticeForm() {
                 <FormActions
                     onSaveDraft={() => submitForm('Draft')}
                     onSubmit={() => submitForm('Published')}
+                    isSubmitting={isSubmitting}
                 />
             </form>
 
