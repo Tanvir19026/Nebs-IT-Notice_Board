@@ -1,5 +1,5 @@
-import useCreateNoticeForm from '../../hooks/useCreateNoticeForm';
-import SuccessModal from '../SuccessModal';
+import useCreateNoticeForm from '../hooks/useCreateNoticeForm';
+import SuccessModal from './SuccessModal';
 import TargetSelector from './create-notice-form/TargetSelector';
 import EmployeeInputs from './create-notice-form/EmployeeInputs';
 import NoticeContentFields from './create-notice-form/NoticeContentFields';
