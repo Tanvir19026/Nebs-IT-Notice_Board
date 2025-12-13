@@ -82,10 +82,8 @@ Follow these instructions to set up the project locally.
 ## Environment Variable Instructions
 
 ### Server (.env)
-| Variable      | Description                                 | Required    | Default |
-|----------     |-----------------------------------------------------------|---------|
-| `MONGODB_URI` | Connection string for MongoDB database      | Yes         |      - |
-| `PORT`        | Port number for the server to listen on     | No          | 5000 |
+- **MONGODB_URI**: Connection string for MongoDB database (Required)
+- **PORT**: Port number for the server to listen on (Default: 5000)
 
 ### Client
 The client is currently configured to automatically detect the environment:
